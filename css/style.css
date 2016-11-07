@@ -52,7 +52,7 @@ nav ul li {
 	display: inline-block;
 	border: 1px solid #878E63;
 	width: 17%;
-	
+	min-width: 100px;
 	
 }
 
