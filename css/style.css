@@ -1,0 +1,293 @@
+
+
+body {
+		background: #F1f0D1;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 18px;
+		overflow: auto;
+
+	}
+	h1,h2,h3 {
+		text-align: center;
+		padding-left: 5px;
+		color: #878E63;
+	}
+	p {
+		padding: 2%;
+		color: #878E63;
+	}
+	img{
+		text-align: center;
+		max-width: 100%;
+		height: auto;
+		width: auto;
+		
+	}
+.wrapper {
+	margin: 0 auto;
+	max-width: 400%;
+	width: 90%;
+	background-color: #F1f0D1;
+	border: 1px solid #878E63;
+}
+.header {
+	width: 99%;
+	min-height: 125px;
+	height: 200px;
+	padding: 5px;
+	text-align: center;
+	background: #BDB76B;
+	border: 1px solid #878E63;
+	color: #878E63;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 50px;
+	position: center;
+
+}
+
+nav ul li {
+	display: inline-block;
+	border: 1px solid #878E63;
+	width: 17%;
+	
+	
+}
+
+nav ul li a {
+	background: #F1f0D1;
+	display: block;
+	padding: 5% 12%;
+	font-weight: bold;
+	font-size: 18px;
+	color: #878E63;
+	text-decoration: none;
+	text-align: center;
+}
+nav ul li a:hover, nav ul li.active a{
+	background-color: #878E63;
+	color: #F1f0D1;
+
+}
+.navigation {
+	text-align: center;
+	padding-right: 40px;
+}
+
+.navigation ul li a {
+
+}
+.banner img {
+	width: 100%;
+	border-top: 1px solid  #878E63;
+}
+.section {
+	width: 29%;
+	float: left;
+	margin: 2% 2%;
+	text-align: center;
+}
+footer {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	
+}
+
+footer a{
+	text-decoration: none;
+	
+}
+footer ul li {
+	
+/*	display: inline-block;*/
+	text-align: center;
+}
+footer ul {
+	text-align: center;
+}
+footer a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding:0;
+}
+li {
+	display: inline-block;
+	position: center;
+}
+.footsection {
+	
+
+	width: 100%;
+	text-align: center;
+	
+}
+form {
+	margin: 0 auto;
+	padding-top: 50px;
+	width: 250px;
+	text-align: center;
+	display: inline-block;
+	padding-left: 420px;
+
+
+}
+fieldset {
+	width: 340px;
+	height: 220px;
+	position: relative;
+   text-align: right;
+   margin: 0px auto;
+   padding-top: 30px;
+   padding-right: 25px;
+   background-color: #D3D3D3;
+}
+fieldset > div {
+	text-align: center;
+}
+.kontakt {
+	position: center;
+	text-align: center;
+	margin-right:auto; 
+	margin-left:auto;
+	
+
+}
+input {
+	width: 180px;
+	height: 23px;
+	font-size: 22px;
+}
+label {
+	text-align: left;
+	font-size: 24px;
+}
+.submit {
+	text-align: left;
+}
+button {
+	width: 150px;
+	height: 50px;
+	font-size: 20px;
+	text-align: center;
+	font-family: Verdana;
+	display: inline-block;
+	
+}
+
+button > div {
+	 
+	 text-align: center;
+}
+legend {
+	text-align: center;
+	font-size: 21px;
+}
+
+.sadrzaj {
+	background-color: #F1f0D1;
+	height: 500px;
+}
+
+.onama, h2 {
+			text-align: left;
+		}
+		.linkovi {
+			text-align: left;
+
+			position: relative;
+			font-family: Verdana;
+			font-size: 30px;
+			width: 70%;
+			float: left;	
+			
+		}
+		
+		.linkovi ul li{
+			
+			position: relative;
+			font-family: Verdana;
+			font-size: 30px;
+			width: 70%;
+			float: left;
+	
+		}
+		
+		.linkovi ul li a:link {
+    text-decoration: none;
+    float: left;
+    margin-left: 40px;
+}
+.linkovi ul li a:visited {
+    text-decoration: none;
+}
+
+
+.linkovi ul li a:hover {
+    text-decoration: none;
+}
+
+
+.linkovi ul li a:active {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 320px) {
+    .hide { display: none; }
+} 
+		
+
+
+.tbl tr:nth-of-type(odd) {
+	background-color:#ccc;
+}
+.tbl > table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+	.tbl th, td {
+	    padding: 8px;
+	    text-align: left;
+	    border-bottom: 1px solid #ddd;
+	}
+	.tbl th {
+		background-color: #878E63;
+	}
+	.tbl {
+		
+		width:100%;
+	    height:300px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+	.tabela {
+		overflow-x:auto;
+		max-width:100%;
+	}
+
+	.comment fieldset {
+		width: 400px;
+		height: 220px;
+		background-color: #D3D3D3;
+		text-align: left;
+		padding-top: 0px;
+   padding-right: 0px;
+	}
+	.teksutalnopolje {
+		width: 380px;
+		height: 100px;
+		text-align: top left;
+	}
+/*.Forme {
+	position: absolute;
+	text-align: center;
+	
+}*/
