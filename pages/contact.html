@@ -5,6 +5,9 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/logo.css">
+	<link rel="stylesheet" href="../css/slt.css">
+	<script src="../javascript/regex.js"></script>
+	<script src="../javascript/dropdwn.js"></script>
 </head>
 
 <body>
@@ -34,6 +37,13 @@
 				<li><a href="onama.html">O nama</a></li>
 				<li><a href="contact.html">Kontakt</a></li>
 				<li><a href="informacije.html">Informacije</a></li>
+				<li>
+					<a onclick="myFunction()" class="dropbtn">Više</a>
+					  <div id="myDropdown" class="dropdown-content">
+					    <a href="gallery.html">Galerija</a>
+					     <a href="slider.html">Slider</a>
+					  </div>					
+				</li>
 			</ul>
 		</nav>
 		<br></br>
@@ -48,7 +58,9 @@
 				
 					<legend>Ostavite Komentar:</legend>
 
-						<input type="text" class="teksutalnopolje" name="email" placeholder="Komentar" id='id1'>
+						<textarea class="teksutalnopolje" rows="4" cols="50" placeholder="Komentar" id='id1'></textarea>
+
+
 						<br><br>
 					<div>
 						<button class="submit" type="button"><div>Postavi!</div></button>
@@ -60,21 +72,24 @@
 
 
 	<div class="sadrzaj">
-		<form class="kontakt">
+		<form id="kontakt-forma" name="kontaktForma" class="kontakt" onsubmit="return(Validiraj('brojTelefona'));">
 			<fieldset>
 				
 					<legend>Kontakt Informacije:</legend>
 
-						<label>Email:</label><input type="email" name="email" placeholder="Email" id='id1'>
+						<label>Email:</label><input type="email" name="email" placeholder="Email" id='email' oninput="ValidirajOnInput2('email');" required>
 						</br>
-						<label>Ime:</label><input type="text" name="ime" placeholder="Ime" id='id2'>
+						<label>Ime:</label><input type="text" name="ime" placeholder="Ime" id="ime1" oninput="ValidirajOnInput3('ime1');" required>
 						<br>
-						<label>Prezime:</label> <input type="text" id ="id3" name="prezime" placeholder="Prezime">
+						<label>Prezime:</label> <input type="text" id ="prez" name="prezime" placeholder="Prezime" oninput="ValidirajOnInput4('prez')">
 						<br>
-						<label>Telefon:</label> <input type="tel" name="usertel" placeholder="Telefon">
-						<br><br>
+						<label>Telefon:</label> <input id="brojTelefona" type="tel" name="usertel" placeholder="Telefon" oninput="ValidirajOnInput('brojTelefona');" required>
+						<div id="error">
+							
+						</div>
+						<br>
 					<div>
-						<button class="submit" type="button"><div>Pošalji!</div></button>
+						<button id="posalji" class="submit" type="submit"><div>Pošalji!</div></button>
 					</div>
 			</fieldset>
 		</form>

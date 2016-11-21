@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 	<title>Naslovna - Massage Center</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/logo.css">
 	<link rel="stylesheet" href="../css/slt.css">
+	<script src="../javascript/lookup.js"></script>
 	<script src="../javascript/dropdwn.js"></script>
 </head>
 
 <body>
 	<div class="wrapper">
-	
-		
 		<div class="header">
 				<div id="logo">
 				<div id="mc">
@@ -48,54 +48,44 @@
 		<br></br>
 	</div>
 	<br>
-	<h2>Dobrodošli, ovdje možete pogledati informacije.</h2>
-		<br>
-		<br>
-		
-		<div class="tabela">
-		<table class="tbl">
-			<tr>
-    			<th>First Name</th>
-    			<th>Last Name</th>
-    			<th>Points</th>
-    			<th>Points</th>
-    			<th>Points</th>
-  			</tr>
-		  <tr>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		  </tr>
-		  <tr>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		  </tr>
-		  <tr>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		  </tr>
-		  <tr>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		  </tr>
-		  
-		</table>
-	</div>
 	
-	<br>
-	<br>
+	<div class="gallery">
+	<h2> Galerija Slika </h2>
+	<br />
+	<div class="slideshow-container">
 
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img  id="myImg" name="img4" src="../images/img4.jpg" alt=""/>
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img  id="img2" name="img2" src="../images/img1.jpg"  alt=""/>
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img id="img3" name="img3" src="../images/img2.jpg" alt=""/>
+  
+</div>
+
+<a class="prev" onclick="plusSlides(-1)"> < </a>
+<a class="next" onclick="plusSlides(1)"> > </a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+	
+</div>
+</div>
 	<footer>
 		<div class = "footsection">
 			<ul>
@@ -105,6 +95,6 @@
 			</ul>
 		</div>
 	</footer>
-
 </div>
+
 </body>

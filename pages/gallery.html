@@ -6,13 +6,12 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/logo.css">
 	<link rel="stylesheet" href="../css/slt.css">
+	<script src="../javascript/lookup.js"></script>
 	<script src="../javascript/dropdwn.js"></script>
 </head>
 
 <body>
 	<div class="wrapper">
-	
-		
 		<div class="header">
 				<div id="logo">
 				<div id="mc">
@@ -40,7 +39,8 @@
 					<a onclick="myFunction()" class="dropbtn">Više</a>
 					  <div id="myDropdown" class="dropdown-content">
 					    <a href="gallery.html">Galerija</a>
-					     <a href="slider.html">Slider</a>
+					    <a href="slider.html">Slider</a>
+
 					  </div>					
 				</li>
 			</ul>
@@ -48,54 +48,31 @@
 		<br></br>
 	</div>
 	<br>
-	<h2>Dobrodošli, ovdje možete pogledati informacije.</h2>
-		<br>
-		<br>
-		
-		<div class="tabela">
-		<table class="tbl">
-			<tr>
-    			<th>First Name</th>
-    			<th>Last Name</th>
-    			<th>Points</th>
-    			<th>Points</th>
-    			<th>Points</th>
-  			</tr>
-		  <tr>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		  </tr>
-		  <tr>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		  </tr>
-		  <tr>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		    <td>test  </td>
-		  </tr>
-		  <tr>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		    <td class="hide">test </td>
-		  </tr>
-		  
-		</table>
-	</div>
 	
-	<br>
-	<br>
+	<div class="gallery" align="center">
+	<h2> Galerija Slika </h2>
+	<br />
 
+	<div class="thumbnails">
+		<img onmouseover="preview.src=this.src"  id="myImg" name="img1" src="../images/private.png" onClick="ime(this.id);" alt=""/>
+		<img onmouseover="preview.src=this.src" id="img2" name="img2" src="../images/img1.jpg" onClick="ime(this.id);" alt=""/>
+		<img onmouseover="preview.src=this.src" id="img3" name="img3" src="../images/img2.jpg" onClick="ime(this.id);" alt=""/>
+		<img onmouseover="preview.src=this.src" id="img4" name="img4" src="../images/img3.jpg" onClick="ime(this.id);" alt=""/>
+		<img onmouseover="preview.src=this.src" id="img5" name="img5" src="../images/img4.jpg" onClick="ime(this.id);" alt=""/>
+	</div><br/>
+
+	<div class="preview" align="center">
+		<img name="preview" src="../images/img1.jpg" alt=""/>
+	</div>
+
+<div id="myModal" class="modal">
+  <span id="spanclose" class="close" onClick="close();">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+	
+</div>
+</div>
 	<footer>
 		<div class = "footsection">
 			<ul>
@@ -105,6 +82,35 @@
 			</ul>
 		</div>
 	</footer>
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+var modal = document.getElementById('myModal');
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onkeydown = function( event ) {
+    if ( event.keyCode == 27 ) {
+    	modal.style.display = "none";
+    }
+};
+
+
+</script>
 </body>
