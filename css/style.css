@@ -128,7 +128,7 @@ li {
 	text-align: center;
 	
 }
-form {
+#kontakt-forma form {
 	margin: 0 auto;
 	padding-top: 50px;
 	width: 250px;
@@ -138,7 +138,7 @@ form {
 
 
 }
-fieldset {
+#kontakt-forma fieldset {
 	width: 340px;
 	height: 300px;
 	position: relative;
@@ -148,7 +148,7 @@ fieldset {
    padding-right: 25px;
    background-color: #D3D3D3;
 }
-fieldset > div {
+#kontakt-forma fieldset > div {
 	text-align: center;
 }
 .kontakt {

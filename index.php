@@ -1,3 +1,15 @@
+<?php
+	date_default_timezone_set("Europe/Sarajevo");
+			session_start();
+			if(isset($_POST['logout'])){
+				unset($_SESSION['login']);
+				session_destroy();
+				echo '<script>alert("Niste vise logovani!");</script>';
+			}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +35,13 @@
 			</div>
 				
 			</div>
+	
 
-			<div class="LoginField">
-				<form id='login'>
+<?php
+			
+			if(!isset($_SESSION['login']))
+				print "<div class='LoginField'>
+				<form id='login' action='index.php' method='POST'>
 					<fieldset>
 					
 					<label for='username' >Username:</label>
@@ -34,30 +50,64 @@
 					<label for='password' >Šifra:</label>
 					<input type='password' name='sifra' id='sifra' maxlength='20' />
 					 
-					<input type='submit' value='Login' />
+					<input type='submit' name='log-in' value='Login' />
 					
 					</fieldset>
 			</form>
-		</div>
+			</div>";
+		
+			if(isset($_SESSION['login'])){
+				  print "<div><form id='logout-forma' action='admin-panel.php' method='POST'><input type='submit' name='logout' value='Logout' /></form></div>
+				 <br>
+				 <form action='pages/admin-panel.php' method='get'>
+					<button>Admin panel</button>
+				</form>";
+			 }
+			
+			
+			$success = false;
+			if (isset($_POST['log-in']) && !empty($_POST['username']) && !empty($_POST['sifra'])) 
+			{
+				$user = $_POST['username'];
+				$pass = $_POST['sifra'];
+				
+				$xml=simplexml_load_file("login.xml") or die("Error: Cannot load login.xml");
+				
+					if($xml->{'username'} == $user && $xml->{'password'}==$pass) {
+						$_SESSION['login'] = true;
 
-
+						$success = true;
+					}
+				}
+				
+			
+			if($success) {
+				header("Location: pages/admin-panel.php");
+			}
+			
+			
+			
+			
+			?>
 		</div>
+		
+			
 		<br>
 		
 
 		<div class="navigation">
 			<nav>
 				<ul>
-					<li><a href="index.html">Početna</a></li>
-					<li><a href="pages/novosti.html">Vijesti</a></li>
-					<li><a href="pages/onama.html">O nama</a></li>
-					<li><a href="pages/contact.html">Kontakt</a></li>
-					<li><a href="pages/informacije.html">Informacije</a></li>
+					<li><a href="index.php">Početna</a></li>
+					<li><a href="pages/novosti.php">Vijesti</a></li>
+					<li><a href="pages/onama.php">O nama</a></li>
+					<li><a href="pages/contact.php">Kontakt</a></li>
+					<li><a href="pages/informacije.php">Informacije</a></li>
 					<li>
 					<a onclick="myFunction()" class="dropbtn">Više</a>
 					  <div id="myDropdown" class="dropdown-content">
-					    <a href="pages/gallery.html">Galerija</a>
-					    <a href="pages/slider.html">Slider</a>
+					    <a href="pages/gallery.php">Galerija</a>
+					    <a href="pages/slider.php">Slider</a>
 					  </div>					
 				</li>
 				</ul>

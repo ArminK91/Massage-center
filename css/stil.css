@@ -1,4 +1,43 @@
+.dokument-item{
+	float: left;
+	width: 30%;
+	margin: 5px;
+	background: #75aa75;
+	padding: 3px;
+}
 
+.dokument-item p{
+	color: black;	
+}
+
+
+
+
+#logout-forma{
+	    float: right!important;
+    margin-right: 30px!important;
+}
+
+#logout-forma > form{
+}
+
+#logout-forma > form > fieldset {
+    width: 200px!important;
+    height: 200px!important;
+    position: relative!important;
+    text-align: right!important;
+    margin: 0px auto!important;
+    padding-top: 30px!important;
+    padding-right: 20px!important;
+    background-color: #D3D3D3!important;
+}
+
+
+input {
+    width: 180px;
+    height: 35px!important;
+    font-size: 22px;
+}
 
 	body {
 		background: #F1f0D1;
