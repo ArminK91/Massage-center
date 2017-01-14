@@ -120,28 +120,27 @@ error_reporting(E_ERROR | E_PARSE);
 		if(isset($_POST['dodaj']) && !empty($_POST['ime']) && !empty($_POST['sadrzaj'])){
 			$ime_=htmlspecialchars($_POST['ime']);
 			$sadrzaj_=htmlspecialchars($_POST['sadrzaj']);
-			
-			$xml = simplexml_load_file('dokumenti.xml');
-			$dokument = $xml->addChild('dokument');
-			$dokument->addChild('ime', $ime_);
-			$dokument->addChild('sadrzaj', $sadrzaj_);
-
-			file_put_contents('dokumenti.xml', $xml->asXML());
+			$veza = new PDO("mysql:dbname=dokumenti;host=localhost;charset=utf8", "root", "");
+			$veza->exec("set names utf8");
+			$unos = $veza->query("INSERT INTO dokument SET ime = '".(string)$ime_."', sadrzaj = '".(string)$sadrzaj_."';");
 			
 		}
 		
 		?>
 		<form method="POST" action="admin-panel.php"><input type='submit' name='pdf' value='Generiši izvještaj' /></form>
+		<form method="POST" action="admin-panel.php"><input type='submit' name='xmlbaza' value='Spasi podatke u bazu' /></form>
 		
 		
 		<div id="svi-fajlovi">
 		<h3>Svi dokumenti</h4>
 		<?php
-			$xml = simplexml_load_file("dokumenti.xml");
-			foreach ($xml->dokument as $dokument) {
+			$veza = new PDO("mysql:dbname=dokumenti;host=localhost;charset=utf8", "root", "");
+			$veza->exec("set names utf8");
+			$veza = $veza->query("select ime, sadrzaj from dokument");
+			foreach ($veza as $data) {
 
-				echo '<div class="dokument-item"><h4>' . $dokument->ime . '</h4>';
-				echo '<p>' . $dokument->sadrzaj . '</p></div>';
+				echo '<div class="dokument-item"><h4>' . $data['ime'] . '</h4>';
+				echo '<p>' . $data['sadrzaj'] . '</p></div>';
 
 			}
 		
@@ -152,7 +151,7 @@ error_reporting(E_ERROR | E_PARSE);
 			$pdf->SetFont('Arial','B',19);
 			$pdf->Write(3, 'Izvjestaj');
 			$pdf->Ln(15);
-			
+			$xml = simplexml_load_file("dokumenti.xml");
 			foreach ($xml->dokument as $dokument) {
 				
 				$pdf->Write(2, 'Naziv dokumenta: ' . $dokument->ime);
@@ -164,6 +163,18 @@ error_reporting(E_ERROR | E_PARSE);
 
 			}
 			$pdf->Output('F', 'izvjestaj.pdf');
+			
+			
+			 if(isset($_POST['xmlbaza'])){
+				 $veza = new PDO("mysql:dbname=dokumenti;host=localhost;charset=utf8", "root", "");
+				 $veza->exec("set names utf8");
+				 $xml = simplexml_load_file("dokumenti.xml");
+				foreach ($xml->dokument as $dokument) {
+					 $unos = $veza->query("INSERT INTO dokument SET ime = '".(string)($dokument->ime)."', sadrzaj = '".(string)($dokument->sadrzaj)."';");
+
+				 }
+				
+			 }
 		
 		?>
 		</div>
